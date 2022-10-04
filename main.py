@@ -1,4 +1,27 @@
 from termcolor import colored
+import time
+import replit
+from random import randint
+percent = 0
+j=0
+for i in range(10):
+    replit.clear()
+    percent +=10
+    print("""
+LOADING SCREEN
+Status: loading
+"""
+         )
+    j=i+1
+    a=colored("="*j,"green")
+    print(a,end=" ")
+    print(str(percent)+"%")
+    time.sleep(randint(1,2))
+    
+print("Loading complete!\n")
+print("Now...")
+time.sleep(2)
+print("What you have been waiting for...")
 slay=colored("                              _.-='_-         _                           ---- \n                         _.-='   _-          | ||'''''''---._______     __.||\n             ___.===''''-.______-,,,,,,,,,,,,`-''----' '''''       '''''  __'\n      __.--''     __        ,'                   o \           __        [__|\n __-''=======.--''  ''--.=================================.--''  ''--.=======:\n]           : /        \ : |  Welcome To TOP SECRET |    : /        \ :      :\nV___________:|          |: |  Done By Nandan,Guneev |    :|          |:   _-'\n'V__________: \        / :_|          Ahmed         |    : \        / :__-'\n -----------'  '-____-'  `-------------------------------'  '-____-'\n","red","on_grey")
 print(slay)
 n=1
@@ -8,8 +31,9 @@ while(n==1):
     ok=colored("This Project has been done By Nandan, Guneev, Ahmed","red")
     print(ok)
     y = int(input(">>>Enter the Number of years you would like to use the car for: "))
-    car=colored("The cars avalible with us today are ","white")
+    car=colored("The cars avalible with us today are ","blue")
     print(car)
+    time.sleep(randint(1,2))
     line=colored(" -------------------","cyan")
     print(line)
     honda=colored(" |>1>Honda Civic   |","cyan")
@@ -193,6 +217,7 @@ while(n==1):
         print("It will cost $",cost,"to buy the car and $",monthly,"to rent the car.")
         yokok=colored(" Hence it is better to Buy the car instead of renting it",attrs=["underline"])
         print(yokok)
+        time.sleep(randint(1,2))
         print("value of car:- $",v)
         print("maintanence of car for 1st year:- $",m)
         print("Cost to rent the car for", y,"Years is $",monthly)
@@ -307,23 +332,40 @@ while(n==1):
         print("It will cost $",cost,"to buy the car and $",monthly,"to rent the car. ")
         yokokok = colored(" Hence it is better to Buy the car instead of renting it", attrs=["underline"])
         print(yokokok)
+        time.sleep(randint(1,2))
         print("value of car:- $",v)
         print("maintanence of car for 1st year:- $",m)
         print("Cost to rent the car for", y,"Years is $",monthly)
         print("---------------------------------------------------------------------",end="\n\n")
-
+      
+    time.sleep(randint(1,2))
     ch=input(">>>Would you like to buy the car or rent the car:- ")
+    print("\n")
     ch=ch.lower()
     if(ch=="buy"):
         save=monthly-v
-        print("Great choice you are saving Amount $",save)
+        if(save>0):
+          cols="green"
+        else:
+          cols="red"
+        time.sleep(randint(1,2))
+        print("Great choice you are saving Amount $",end=" ")
+        als=colored(save,cols)
+        print(als)
         print("Thank You for buying a car with us \n")
 
 
     elif(ch=="rent"):
 
         save=v-monthly
-        print("Great choice you are saving Amount $",save)
+        if(save>0):
+          cols="green"
+        else:
+          cols="red"
+        time.sleep(randint(1,2))
+        print("Great choice you are saving Amount $",end=" ")
+        aml=colored(save,cols)
+        print(aml)
         print("Thank You for renting a car with us \n")
     else:
         print("Wrong Choice Entered Please Re-Run the program")
@@ -335,4 +377,5 @@ while(n==1):
         n=1
     else:
         n=0
-
+        print("Thank You For Using Our Carnomics program")
+        break
